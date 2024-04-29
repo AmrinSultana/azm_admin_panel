@@ -1,0 +1,23 @@
+version: "3"
+
+# https://docs.docker.com/compose/compose-file/#entrypoint
+services:
+  azm_admin_panel:
+    build:
+      context: ./
+      dockerfile: scripts/Dockerfile
+    image: azmkuwait/azm_admin_panel
+    restart: always
+    working_dir: /apps/azm_admin_panel
+    environment:
+      - DOCKER_CLIENT_TIMEOUT=120
+      - COMPOSE_HTTP_TIMEOUT=120
+    volumes:
+      - ./:/apps/azm_admin_panel
+      - /apps/azm_admin_panel/node_modules/
+      - /root/.config/
+    ports:
+      - "3006:3006"
+      - "9005:9005"
+
+

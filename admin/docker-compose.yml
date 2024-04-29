@@ -1,0 +1,16 @@
+version: "3"
+
+# https://docs.docker.com/compose/compose-file/#entrypoint
+services:
+  firebase-admin:
+    build:
+      context: ./
+      dockerfile: scripts/Dockerfile
+    image: mustaqeem/firebase-admin
+    restart: ${GOR_RESTART_SERVICES:-always}
+    environment:
+      # - GOOGLE_APPLICATION_CREDENTIALS=secrets/development/fir-test-e4371-firebase-adminsdk-5zmwe-893335ffbc.json
+      - GOOGLE_APPLICATION_CREDENTIALS=secrets/production/azm-sales-inspector-baf39-firebase-adminsdk-exuzz-9fd3d931b5.json
+      - APP_MODE=production
+    volumes:
+      - ./:/admin

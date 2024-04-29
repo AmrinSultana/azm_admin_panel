@@ -1,0 +1,28 @@
+User import
+
+https://firebase.google.com/docs/cli/auth
+firebase auth:import users.csv
+
+Deploy function
+
+firebase deploy --only functions:trackingOn
+firebase deploy --only functions:trackingOff
+firebase deploy --only functions:listUsers
+firebase deploy --only functions:updateUserLocation
+firebase deploy --only functions:createUser
+firebase deploy --only functions:uploadGeofenceCsv
+firebase deploy --only functions:writeTeam
+firebase deploy --only functions:deleteUser
+firebase deploy --only functions:cleanData
+
+Deploy hosting
+firebase deploy --only hosting
+
+yo react-firebase:function addUser
+
+https://code-maven.com/create-images-with-python-pil-pillow
+
+
+https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+
+firebase use azm-sales-inspector-baf39
